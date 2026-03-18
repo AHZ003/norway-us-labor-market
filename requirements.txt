@@ -1,9 +1,14 @@
+# Dashboard (Streamlit Cloud uses these)
+streamlit
 pandas
+plotly
+python-dotenv
+
+# Data pipeline (local use only)
 requests
 psycopg2-binary
 sqlalchemy
-streamlit
-plotly
-python-dotenv
-jupyter
 pyjstat
+
+# For the exploration notebook, install separately:
+# pip install jupyter
