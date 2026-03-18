@@ -120,5 +120,9 @@ python src/database.py
 - **Wage coverage gaps:** SSB wages cover full-time employees in registered enterprises; BLS IT wages may exclude some worker categories. Neither fully captures gig workers.
 - **Annual aggregation:** Monthly COVID spike (US: 14.7% in April 2020) is smoothed in annual averages.
 
+## AI Disclosure
+
+This project was built with the assistance of [Claude](https://claude.ai) (Anthropic's AI assistant) for code scaffolding, API debugging, and pipeline setup. All analytical decisions — including the choice of data sources, industry mappings, PPP methodology, and interpretation of findings — were made by the author. The SQL queries, key findings, and project direction reflect the author's own analytical work.
+
 ---
 
