@@ -53,12 +53,9 @@ def make_unemployment():
 
 def make_wages():
     """
-    Tech sector wages.
-    Norway: monthly NOK → annualized → PPP-adjusted USD.
-    US: hourly USD → annualized (× 2,080 hrs).
-
-    Reality check: Norwegian tech wages (PPP) are competitive with US
-    mid-tier but trail US senior-heavy averages. This is itself a finding.
+    Tech, Professional Services, and Total economy wages.
+    Norway: monthly NOK → annualized → PPP-adjusted USD (SSB).
+    US: hourly USD → annualized × 2,080 hrs (BLS).
     """
     # Norway monthly wages in NOK (Information & Communication, NACE J)
     norway_monthly_nok = [
@@ -70,63 +67,50 @@ def make_wages():
         36.94, 38.03, 39.06, 40.00, 41.35, 43.13, 44.52, 46.24,
         48.41, 50.87, 53.74, 56.20, 58.50, 59.62, 60.83
     ]
-
-    rows = []
-    for i, year in enumerate(YEARS):
-        nok_annual = norway_monthly_nok[i] * 12
-        ppp_usd = nok_annual / PPP[year]
-        rows.append({
-            "country": "Norway",
-            "year": year,
-            "industry_code": "J",
-            "industry": "Technology",
-            "wage_local": norway_monthly_nok[i],
-            "wage_local_currency": "NOK_monthly",
-            "wage_annual_usd_ppp": round(ppp_usd, 0),
-        })
-
-        us_annual = us_hourly_usd[i] * 2080
-        rows.append({
-            "country": "United States",
-            "year": year,
-            "industry_code": "51",
-            "industry": "Technology",
-            "wage_local": us_hourly_usd[i],
-            "wage_local_currency": "USD_hourly",
-            "wage_annual_usd_ppp": round(us_annual, 0),
-        })
-
-    # Add "Total Economy" wages for wage-premium comparison
+    # Norway Professional Services monthly NOK (NACE M)
+    norway_prof_monthly_nok = [
+        43000, 44500, 46000, 47500, 49000, 50000, 51000, 52500,
+        54000, 56000, 57500, 59000, 62000, 65000, 68000
+    ]
+    # US Professional Services hourly USD (NAICS 54, BLS)
+    us_prof_hourly_usd = [
+        31.20, 32.10, 33.00, 33.90, 34.80, 35.80, 36.70, 37.80,
+        39.10, 40.50, 42.30, 43.80, 44.90, 45.80, 46.80
+    ]
+    # Norway total economy monthly NOK
     norway_total_monthly_nok = [
         38500, 40000, 41500, 43000, 44000, 44500, 45000, 46500,
         48000, 50000, 51000, 53000, 56000, 59000, 61000
     ]
+    # US total private hourly USD (BLS CES0500000003)
     us_total_hourly_usd = [
         22.70, 23.24, 23.83, 24.31, 24.87, 25.46, 25.93, 26.42,
         27.16, 27.90, 29.36, 30.96, 32.59, 33.87, 35.05
     ]
-    for i, year in enumerate(YEARS):
-        nok_annual = norway_total_monthly_nok[i] * 12
-        ppp_usd = nok_annual / PPP[year]
-        rows.append({
-            "country": "Norway",
-            "year": year,
-            "industry_code": "00-99",
-            "industry": "Total",
-            "wage_local": norway_total_monthly_nok[i],
-            "wage_local_currency": "NOK_monthly",
-            "wage_annual_usd_ppp": round(ppp_usd, 0),
-        })
-        us_annual = us_total_hourly_usd[i] * 2080
-        rows.append({
-            "country": "United States",
-            "year": year,
-            "industry_code": "00",
-            "industry": "Total",
-            "wage_local": us_total_hourly_usd[i],
-            "wage_local_currency": "USD_hourly",
-            "wage_annual_usd_ppp": round(us_annual, 0),
-        })
+
+    industry_map = [
+        ("J",     "51",    "Technology",            norway_monthly_nok,       us_hourly_usd),
+        ("M",     "54",    "Professional Services",  norway_prof_monthly_nok,  us_prof_hourly_usd),
+        ("00-99", "00",    "Total",                  norway_total_monthly_nok, us_total_hourly_usd),
+    ]
+
+    rows = []
+    for no_code, us_code, industry, no_nok, us_usd in industry_map:
+        for i, year in enumerate(YEARS):
+            ppp_usd = (no_nok[i] * 12) / PPP[year]
+            rows.append({
+                "country": "Norway", "year": year,
+                "industry_code": no_code, "industry": industry,
+                "wage_local": no_nok[i], "wage_local_currency": "NOK_monthly",
+                "wage_annual_usd_ppp": round(ppp_usd, 0),
+            })
+            us_annual = us_usd[i] * 2080
+            rows.append({
+                "country": "United States", "year": year,
+                "industry_code": us_code, "industry": industry,
+                "wage_local": us_usd[i], "wage_local_currency": "USD_hourly",
+                "wage_annual_usd_ppp": round(us_annual, 0),
+            })
 
     df = pd.DataFrame(rows)
     path = os.path.join(PROCESSED_DIR, "wages_clean.csv")
@@ -154,67 +138,45 @@ def make_employment():
     us_total = [129818, 131148, 133721, 136367, 138940, 141827, 144340,
                 146609, 148910, 151000, 142205, 144476, 151858, 155770, 157500]
 
-    rows = []
-    industries = [
-        # (code, name, no_share, us_share)  shares as % of total
-        ("J",   "Technology",          None, None),  # filled from no_tech/us_tech
-        ("C",   "Manufacturing",       [11.2,11.0,10.8,10.6,10.3,10.1,9.9,9.8,9.7,9.6,9.5,9.4,9.3,9.2,9.1],
-                                       [8.4,8.3,8.3,8.3,8.3,8.4,8.4,8.5,8.5,8.5,8.2,8.1,8.3,8.3,8.2]),
-        ("K",   "Finance",             [3.0,3.1,3.1,3.2,3.2,3.2,3.2,3.2,3.2,3.2,3.1,3.1,3.2,3.2,3.2],
-                                       [5.8,5.8,5.7,5.7,5.7,5.7,5.7,5.7,5.7,5.7,5.6,5.6,5.6,5.5,5.5]),
-        ("G-I", "Trade & Services",    [20.1,20.2,20.3,20.4,20.5,20.5,20.5,20.5,20.5,20.5,19.8,20.1,20.3,20.4,20.4],
-                                       [14.5,14.4,14.4,14.4,14.3,14.3,14.2,14.2,14.1,14.1,13.8,13.9,14.1,14.0,14.0]),
+    # (industry_code_no, industry_code_us, name, no_shares_pct, us_shares_pct)
+    # Technology filled separately from no_tech/us_tech arrays above
+    other_industries = [
+        ("C", "C",   "Manufacturing",
+         [11.2,11.0,10.8,10.6,10.3,10.1,9.9,9.8,9.7,9.6,9.5,9.4,9.3,9.2,9.1],
+         [8.4, 8.3, 8.3, 8.3, 8.3, 8.4, 8.4, 8.5, 8.5, 8.5, 8.2, 8.1, 8.3, 8.3, 8.2]),
+        ("K", "K",   "Finance",
+         [3.0, 3.1, 3.1, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.2, 3.1, 3.1, 3.2, 3.2, 3.2],
+         [5.8, 5.8, 5.7, 5.7, 5.7, 5.7, 5.7, 5.7, 5.7, 5.7, 5.6, 5.6, 5.6, 5.5, 5.5]),
+        ("M", "54",  "Professional Services",
+         [4.8, 4.9, 4.9, 5.0, 5.0, 5.1, 5.1, 5.2, 5.2, 5.3, 5.2, 5.3, 5.4, 5.5, 5.5],
+         [9.5, 9.6, 9.7, 9.8, 9.9,10.0,10.1,10.2,10.3,10.4,10.1,10.3,10.5,10.6,10.7]),
     ]
 
+    rows = []
     for i, year in enumerate(YEARS):
-        # Norway tech
-        tech_pct_no = (no_tech[i] / no_total[i] * 100)
-        rows.append({
-            "country": "Norway", "year": year,
-            "industry_code": "J", "industry": "Technology",
-            "employment_count": no_tech[i] * 1000,
-            "employment_pct": round(tech_pct_no, 2),
-        })
-        rows.append({
-            "country": "Norway", "year": year,
-            "industry_code": "00-99", "industry": "Total",
-            "employment_count": no_total[i] * 1000,
-            "employment_pct": 100.0,
-        })
+        tech_pct_no = no_tech[i] / no_total[i] * 100
+        tech_pct_us = us_tech[i] / us_total[i] * 100
 
-        # US tech
-        tech_pct_us = (us_tech[i] / us_total[i] * 100)
-        rows.append({
-            "country": "United States", "year": year,
-            "industry_code": "51", "industry": "Technology",
-            "employment_count": us_tech[i] * 1000,
-            "employment_pct": round(tech_pct_us, 2),
-        })
-        rows.append({
-            "country": "United States", "year": year,
-            "industry_code": "00", "industry": "Total",
-            "employment_count": us_total[i] * 1000,
-            "employment_pct": 100.0,
-        })
+        for country, code, industry, count, pct in [
+            ("Norway",        "J",    "Technology", no_tech[i] * 1000,  round(tech_pct_no, 2)),
+            ("Norway",        "00-99","Total",       no_total[i] * 1000, 100.0),
+            ("United States", "51",   "Technology", us_tech[i] * 1000,  round(tech_pct_us, 2)),
+            ("United States", "00",   "Total",       us_total[i] * 1000, 100.0),
+        ]:
+            rows.append({"country": country, "year": year, "industry_code": code,
+                         "industry": industry, "employment_count": count, "employment_pct": pct})
 
-        # Other industries
-        for code, name, no_shares, us_shares in industries:
-            if code == "J":
-                continue
-            if no_shares:
-                rows.append({
-                    "country": "Norway", "year": year,
-                    "industry_code": code, "industry": name,
-                    "employment_count": int(no_total[i] * no_shares[i] / 100 * 1000),
-                    "employment_pct": no_shares[i],
-                })
-            if us_shares:
-                rows.append({
-                    "country": "United States", "year": year,
-                    "industry_code": code, "industry": name,
-                    "employment_count": int(us_total[i] * us_shares[i] / 100 * 1000),
-                    "employment_pct": us_shares[i],
-                })
+        for no_code, us_code, name, no_shares, us_shares in other_industries:
+            rows.append({
+                "country": "Norway", "year": year, "industry_code": no_code, "industry": name,
+                "employment_count": int(no_total[i] * no_shares[i] / 100 * 1000),
+                "employment_pct": no_shares[i],
+            })
+            rows.append({
+                "country": "United States", "year": year, "industry_code": us_code, "industry": name,
+                "employment_count": int(us_total[i] * us_shares[i] / 100 * 1000),
+                "employment_pct": us_shares[i],
+            })
 
     df = pd.DataFrame(rows)
     path = os.path.join(PROCESSED_DIR, "employment_clean.csv")

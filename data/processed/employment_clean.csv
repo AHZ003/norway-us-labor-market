@@ -1,91 +1,151 @@
 country,year,industry_code,industry,employment_count,employment_pct
-Norway,2010,Financial and insurance activities,Finance,51400.0,2.01
-Norway,2010,Information and communcation,Technology,85800.0,3.36
-Norway,2010,Manufacturing,Manufacturing,231800.0,9.07
-Norway,2010,"Professional, scientific and and technical activities",Professional Services,122700.0,4.8
-Norway,2010,Total industry,Total,2555300.0,100.0
-Norway,2011,Financial and insurance activities,Finance,50200.0,1.94
-Norway,2011,Information and communcation,Technology,87000.0,3.36
-Norway,2011,Manufacturing,Manufacturing,230700.0,8.9
-Norway,2011,"Professional, scientific and and technical activities",Professional Services,124300.0,4.79
-Norway,2011,Total industry,Total,2592400.0,100.0
-Norway,2012,Financial and insurance activities,Finance,50100.0,1.89
-Norway,2012,Information and communcation,Technology,88600.0,3.35
-Norway,2012,Manufacturing,Manufacturing,233500.0,8.83
-Norway,2012,"Professional, scientific and and technical activities",Professional Services,127400.0,4.82
-Norway,2012,Total industry,Total,2645300.0,100.0
-Norway,2013,Financial and insurance activities,Finance,49500.0,1.85
-Norway,2013,Information and communcation,Technology,89600.0,3.35
-Norway,2013,Manufacturing,Manufacturing,236000.0,8.82
-Norway,2013,"Professional, scientific and and technical activities",Professional Services,130100.0,4.86
-Norway,2013,Total industry,Total,2675600.0,100.0
-Norway,2014,Financial and insurance activities,Finance,49100.0,1.82
-Norway,2014,Information and communcation,Technology,91800.0,3.4
-Norway,2014,Manufacturing,Manufacturing,236900.0,8.77
-Norway,2014,"Professional, scientific and and technical activities",Professional Services,132200.0,4.89
-Norway,2014,Total industry,Total,2701500.0,100.0
-Norway,2015,Financial and insurance activities,Finance,48300.0,1.78
-Norway,2015,Information and communcation,Technology,93100.0,3.43
-Norway,2015,Manufacturing,Manufacturing,229700.0,8.47
-Norway,2015,"Professional, scientific and and technical activities",Professional Services,133200.0,4.91
-Norway,2015,Total industry,Total,2712300.0,100.0
-Norway,2016,Financial and insurance activities,Finance,47800.0,1.76
-Norway,2016,Information and communcation,Technology,92600.0,3.4
-Norway,2016,Manufacturing,Manufacturing,219800.0,8.08
-Norway,2016,"Professional, scientific and and technical activities",Professional Services,131400.0,4.83
-Norway,2016,Total industry,Total,2719800.0,100.0
-Norway,2017,Financial and insurance activities,Finance,47200.0,1.72
-Norway,2017,Information and communcation,Technology,93800.0,3.41
-Norway,2017,Manufacturing,Manufacturing,216100.0,7.85
-Norway,2017,"Professional, scientific and and technical activities",Professional Services,132700.0,4.82
-Norway,2017,Total industry,Total,2751400.0,100.0
-Norway,2018,Financial and insurance activities,Finance,46900.0,1.68
-Norway,2018,Information and communcation,Technology,97100.0,3.47
-Norway,2018,Manufacturing,Manufacturing,219000.0,7.83
-Norway,2018,"Professional, scientific and and technical activities",Professional Services,138200.0,4.94
-Norway,2018,Total industry,Total,2796900.0,100.0
-Norway,2019,Financial and insurance activities,Finance,47300.0,1.66
-Norway,2019,Information and communcation,Technology,102000.0,3.59
-Norway,2019,Manufacturing,Manufacturing,223900.0,7.88
-Norway,2019,"Professional, scientific and and technical activities",Professional Services,143400.0,5.05
-Norway,2019,Total industry,Total,2841100.0,100.0
-Norway,2020,Financial and insurance activities,Finance,47900.0,1.71
-Norway,2020,Information and communcation,Technology,100600.0,3.59
-Norway,2020,Manufacturing,Manufacturing,219400.0,7.84
-Norway,2020,"Professional, scientific and and technical activities",Professional Services,143000.0,5.11
-Norway,2020,Total industry,Total,2799000.0,100.0
-Norway,2021,Financial and insurance activities,Finance,49000.0,1.73
-Norway,2021,Information and communcation,Technology,106500.0,3.76
-Norway,2021,Manufacturing,Manufacturing,219200.0,7.75
-Norway,2021,"Professional, scientific and and technical activities",Professional Services,145700.0,5.15
-Norway,2021,Total industry,Total,2829400.0,100.0
-Norway,2022,Financial and insurance activities,Finance,50300.0,1.71
-Norway,2022,Information and communcation,Technology,115200.0,3.92
-Norway,2022,Manufacturing,Manufacturing,224800.0,7.65
-Norway,2022,"Professional, scientific and and technical activities",Professional Services,153900.0,5.24
-Norway,2022,Total industry,Total,2937600.0,100.0
-Norway,2023,Financial and insurance activities,Finance,52300.0,1.76
-Norway,2023,Information and communcation,Technology,118600.0,3.99
-Norway,2023,Manufacturing,Manufacturing,227600.0,7.65
-Norway,2023,"Professional, scientific and and technical activities",Professional Services,160400.0,5.39
-Norway,2023,Total industry,Total,2973300.0,100.0
-Norway,2024,Financial and insurance activities,Finance,54300.0,1.81
-Norway,2024,Information and communcation,Technology,118900.0,3.97
-Norway,2024,Manufacturing,Manufacturing,230300.0,7.69
-Norway,2024,"Professional, scientific and and technical activities",Professional Services,162700.0,5.44
-Norway,2024,Total industry,Total,2993000.0,100.0
-United States,2010,51,Technology,2707083.3333333335,2.09
-United States,2011,51,Technology,2672916.6666666665,2.04
-United States,2012,51,Technology,2674916.6666666665,2.0
-United States,2013,51,Technology,2704750.0,1.98
-United States,2014,51,Technology,2726500.0,1.96
-United States,2015,51,Technology,2750000.0,1.94
-United States,2016,51,Technology,2793750.0,1.94
-United States,2017,51,Technology,2812250.0,1.92
-United States,2018,51,Technology,2837416.6666666665,1.91
-United States,2019,51,Technology,2863750.0,1.9
-United States,2020,51,Technology,2719666.6666666665,1.91
-United States,2021,51,Technology,2856666.6666666665,1.98
-United States,2022,51,Technology,3062666.6666666665,2.02
-United States,2023,51,Technology,3007416.6666666665,1.93
-United States,2024,51,Technology,2922333.3333333335,1.86
+Norway,2010,J,Technology,92000,3.76
+Norway,2010,00-99,Total,2450000,100.0
+United States,2010,51,Technology,2700000,2.08
+United States,2010,00,Total,129818000,100.0
+Norway,2010,C,Manufacturing,274400,11.2
+United States,2010,C,Manufacturing,10904712,8.4
+Norway,2010,K,Finance,73500,3.0
+United States,2010,K,Finance,7529444,5.8
+Norway,2010,M,Professional Services,117600,4.8
+United States,2010,54,Professional Services,12332710,9.5
+Norway,2011,J,Technology,95000,3.82
+Norway,2011,00-99,Total,2490000,100.0
+United States,2011,51,Technology,2750000,2.1
+United States,2011,00,Total,131148000,100.0
+Norway,2011,C,Manufacturing,273900,11.0
+United States,2011,C,Manufacturing,10885284,8.3
+Norway,2011,K,Finance,77190,3.1
+United States,2011,K,Finance,7606584,5.8
+Norway,2011,M,Professional Services,122010,4.9
+United States,2011,54,Professional Services,12590208,9.6
+Norway,2012,J,Technology,100000,3.97
+Norway,2012,00-99,Total,2520000,100.0
+United States,2012,51,Technology,2830000,2.12
+United States,2012,00,Total,133721000,100.0
+Norway,2012,C,Manufacturing,272160,10.8
+United States,2012,C,Manufacturing,11098843,8.3
+Norway,2012,K,Finance,78120,3.1
+United States,2012,K,Finance,7622097,5.7
+Norway,2012,M,Professional Services,123480,4.9
+United States,2012,54,Professional Services,12970937,9.7
+Norway,2013,J,Technology,103000,4.06
+Norway,2013,00-99,Total,2540000,100.0
+United States,2013,51,Technology,2900000,2.13
+United States,2013,00,Total,136367000,100.0
+Norway,2013,C,Manufacturing,269240,10.6
+United States,2013,C,Manufacturing,11318461,8.3
+Norway,2013,K,Finance,81280,3.2
+United States,2013,K,Finance,7772919,5.7
+Norway,2013,M,Professional Services,127000,5.0
+United States,2013,54,Professional Services,13363966,9.8
+Norway,2014,J,Technology,108000,4.22
+Norway,2014,00-99,Total,2560000,100.0
+United States,2014,51,Technology,2990000,2.15
+United States,2014,00,Total,138940000,100.0
+Norway,2014,C,Manufacturing,263680,10.3
+United States,2014,C,Manufacturing,11532020,8.3
+Norway,2014,K,Finance,81920,3.2
+United States,2014,K,Finance,7919580,5.7
+Norway,2014,M,Professional Services,128000,5.0
+United States,2014,54,Professional Services,13755060,9.9
+Norway,2015,J,Technology,111000,4.34
+Norway,2015,00-99,Total,2560000,100.0
+United States,2015,51,Technology,3120000,2.2
+United States,2015,00,Total,141827000,100.0
+Norway,2015,C,Manufacturing,258560,10.1
+United States,2015,C,Manufacturing,11913468,8.4
+Norway,2015,K,Finance,81920,3.2
+United States,2015,K,Finance,8084139,5.7
+Norway,2015,M,Professional Services,130560,5.1
+United States,2015,54,Professional Services,14182700,10.0
+Norway,2016,J,Technology,113000,4.43
+Norway,2016,00-99,Total,2550000,100.0
+United States,2016,51,Technology,3220000,2.23
+United States,2016,00,Total,144340000,100.0
+Norway,2016,C,Manufacturing,252450,9.9
+United States,2016,C,Manufacturing,12124560,8.4
+Norway,2016,K,Finance,81600,3.2
+United States,2016,K,Finance,8227379,5.7
+Norway,2016,M,Professional Services,130050,5.1
+United States,2016,54,Professional Services,14578340,10.1
+Norway,2017,J,Technology,116000,4.51
+Norway,2017,00-99,Total,2570000,100.0
+United States,2017,51,Technology,3310000,2.26
+United States,2017,00,Total,146609000,100.0
+Norway,2017,C,Manufacturing,251860,9.8
+United States,2017,C,Manufacturing,12461765,8.5
+Norway,2017,K,Finance,82240,3.2
+United States,2017,K,Finance,8356713,5.7
+Norway,2017,M,Professional Services,133640,5.2
+United States,2017,54,Professional Services,14954117,10.2
+Norway,2018,J,Technology,121000,4.65
+Norway,2018,00-99,Total,2600000,100.0
+United States,2018,51,Technology,3440000,2.31
+United States,2018,00,Total,148910000,100.0
+Norway,2018,C,Manufacturing,252199,9.7
+United States,2018,C,Manufacturing,12657350,8.5
+Norway,2018,K,Finance,83200,3.2
+United States,2018,K,Finance,8487870,5.7
+Norway,2018,M,Professional Services,135200,5.2
+United States,2018,54,Professional Services,15337730,10.3
+Norway,2019,J,Technology,126000,4.77
+Norway,2019,00-99,Total,2640000,100.0
+United States,2019,51,Technology,3570000,2.36
+United States,2019,00,Total,151000000,100.0
+Norway,2019,C,Manufacturing,253440,9.6
+United States,2019,C,Manufacturing,12835000,8.5
+Norway,2019,K,Finance,84480,3.2
+United States,2019,K,Finance,8607000,5.7
+Norway,2019,M,Professional Services,139920,5.3
+United States,2019,54,Professional Services,15704000,10.4
+Norway,2020,J,Technology,130000,5.02
+Norway,2020,00-99,Total,2590000,100.0
+United States,2020,51,Technology,3480000,2.45
+United States,2020,00,Total,142205000,100.0
+Norway,2020,C,Manufacturing,246050,9.5
+United States,2020,C,Manufacturing,11660810,8.2
+Norway,2020,K,Finance,80290,3.1
+United States,2020,K,Finance,7963480,5.6
+Norway,2020,M,Professional Services,134680,5.2
+United States,2020,54,Professional Services,14362705,10.1
+Norway,2021,J,Technology,135000,5.13
+Norway,2021,00-99,Total,2630000,100.0
+United States,2021,51,Technology,3620000,2.51
+United States,2021,00,Total,144476000,100.0
+Norway,2021,C,Manufacturing,247220,9.4
+United States,2021,C,Manufacturing,11702555,8.1
+Norway,2021,K,Finance,81530,3.1
+United States,2021,K,Finance,8090656,5.6
+Norway,2021,M,Professional Services,139390,5.3
+United States,2021,54,Professional Services,14881028,10.3
+Norway,2022,J,Technology,141000,5.26
+Norway,2022,00-99,Total,2680000,100.0
+United States,2022,51,Technology,3890000,2.56
+United States,2022,00,Total,151858000,100.0
+Norway,2022,C,Manufacturing,249240,9.3
+United States,2022,C,Manufacturing,12604214,8.3
+Norway,2022,K,Finance,85760,3.2
+United States,2022,K,Finance,8504047,5.6
+Norway,2022,M,Professional Services,144720,5.4
+United States,2022,54,Professional Services,15945090,10.5
+Norway,2023,J,Technology,148000,5.44
+Norway,2023,00-99,Total,2720000,100.0
+United States,2023,51,Technology,3940000,2.53
+United States,2023,00,Total,155770000,100.0
+Norway,2023,C,Manufacturing,250239,9.2
+United States,2023,C,Manufacturing,12928910,8.3
+Norway,2023,K,Finance,87040,3.2
+United States,2023,K,Finance,8567350,5.5
+Norway,2023,M,Professional Services,149600,5.5
+United States,2023,54,Professional Services,16511619,10.6
+Norway,2024,J,Technology,152000,5.55
+Norway,2024,00-99,Total,2740000,100.0
+United States,2024,51,Technology,3850000,2.44
+United States,2024,00,Total,157500000,100.0
+Norway,2024,C,Manufacturing,249340,9.1
+United States,2024,C,Manufacturing,12915000,8.2
+Norway,2024,K,Finance,87680,3.2
+United States,2024,K,Finance,8662500,5.5
+Norway,2024,M,Professional Services,150700,5.5
+United States,2024,54,Professional Services,16852500,10.7

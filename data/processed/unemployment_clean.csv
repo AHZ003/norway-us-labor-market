@@ -1,31 +1,31 @@
-year,unemployment_rate,country
-2010,3.8,Norway
-2011,3.4,Norway
-2012,3.3,Norway
-2013,3.8,Norway
-2014,3.6,Norway
-2015,4.5,Norway
-2016,4.7,Norway
-2017,4.2,Norway
-2018,3.8,Norway
-2019,3.7,Norway
-2020,4.6,Norway
-2021,4.4,Norway
-2022,3.2,Norway
-2023,3.6,Norway
-2024,4.0,Norway
-2010,9.608333333333334,United States
-2011,8.933333333333334,United States
-2012,8.075000000000001,United States
-2013,7.358333333333333,United States
-2014,6.158333333333334,United States
-2015,5.2749999999999995,United States
-2016,4.875,United States
-2017,4.358333333333333,United States
-2018,3.891666666666667,United States
-2019,3.6750000000000003,United States
-2020,8.1,United States
-2021,5.3500000000000005,United States
-2022,3.65,United States
-2023,3.625,United States
-2024,4.0249999999999995,United States
+year,country,unemployment_rate
+2010,Norway,3.6
+2010,United States,9.6
+2011,Norway,3.3
+2011,United States,8.9
+2012,Norway,3.2
+2012,United States,8.1
+2013,Norway,3.5
+2013,United States,7.4
+2014,Norway,3.5
+2014,United States,6.2
+2015,Norway,4.4
+2015,United States,5.3
+2016,Norway,4.7
+2016,United States,4.9
+2017,Norway,4.2
+2017,United States,4.4
+2018,Norway,3.8
+2018,United States,3.9
+2019,Norway,3.7
+2019,United States,3.7
+2020,Norway,4.6
+2020,United States,8.1
+2021,Norway,4.4
+2021,United States,5.4
+2022,Norway,3.2
+2022,United States,3.6
+2023,Norway,1.8
+2023,United States,3.6
+2024,Norway,2.0
+2024,United States,4.0
