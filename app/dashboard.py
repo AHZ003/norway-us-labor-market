@@ -258,7 +258,7 @@ corr_df = corr_df[corr_df["year"].between(*year_range)]
 
 fig_corr = px.scatter(
     corr_df, x="employment_pct", y="unemployment_rate", color="country",
-    color_discrete_map=COLORS, trendline="ols",
+    color_discrete_map=COLORS,
     labels={
         "employment_pct": "Tech Employment (% of Workforce)",
         "unemployment_rate": "Unemployment Rate (%)",
@@ -266,6 +266,20 @@ fig_corr = px.scatter(
     },
     hover_data=["year"],
 )
+
+for country, color in COLORS.items():
+    df_c = corr_df[corr_df["country"] == country].dropna()
+    if len(df_c) < 2:
+        continue
+    x, y = df_c["employment_pct"].values, df_c["unemployment_rate"].values
+    m, b = np.polyfit(x, y, 1)
+    x_line = np.linspace(x.min(), x.max(), 100)
+    fig_corr.add_scatter(
+        x=x_line, y=m * x_line + b,
+        mode="lines", line=dict(color=color, dash="dot", width=1.5),
+        name=f"{country} trend", showlegend=True,
+    )
+
 fig_corr.update_layout(legend_title_text="", height=420)
 st.plotly_chart(fig_corr, use_container_width=True)
 
