@@ -17,7 +17,7 @@ CHART_TEMPLATE = "plotly_white"
 CHART_H = 420
 
 
-st.set_page_config(page_title="Norway vs. US Labor Market", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Norway vs. US Labor Market", layout="wide")
 
 
 @st.cache_data
@@ -40,7 +40,7 @@ if any(df is None for df in [unemployment, wages, employment]):
 
 # ── Sidebar (defined first so filter applies everywhere) ──────────────────────
 
-st.sidebar.title("Norway 🇳🇴 vs US 🇺🇸")
+st.sidebar.title("Norway vs. United States")
 st.sidebar.markdown("Labor Market Comparison (2010–2024)")
 st.sidebar.markdown("---")
 
@@ -99,11 +99,11 @@ st.markdown(
 # ── Tabs ──────────────────────────────────────────────────────────────────────
 
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    "📊 Overview",
-    "📉 Unemployment & DiD",
-    "💰 Wages",
-    "👷 Employment",
-    "🔬 Statistics",
+    "Overview",
+    "Unemployment & DiD",
+    "Wages",
+    "Employment",
+    "Statistics",
 ])
 
 
@@ -450,7 +450,7 @@ with tab5:
                 f"p = {p:.3f} ({'significant' if p < 0.05 else 'not significant'})",
             )
 
-    st.caption("⚠️ Correlation ≠ causation. A growing tech sector may reflect a healthy economy rather than drive lower unemployment.")
+    st.caption("Note: Correlation does not imply causation. A growing tech sector may reflect a healthy economy rather than drive lower unemployment.")
 
     st.markdown("---")
 
