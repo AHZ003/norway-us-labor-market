@@ -33,22 +33,25 @@ technology sector. Built with real government data from Statistics Norway
 ## Resume Bullets
 
 ```
-Norway–US Labor Market Dashboard | Python, PostgreSQL, Streamlit, Plotly, SSB API, BLS API
+Norway–US Labor Market Dashboard | Python, SQLite, Streamlit, Plotly, SSB API, BLS API, SciPy
 
-- Designed PostgreSQL star schema and ETL pipeline integrating Norwegian (SSB) and US (BLS)
-  government labor data across 15 years and 4 industry sectors; normalized wages across
-  currencies using OECD PPP conversion factors.
-- Built interactive Streamlit dashboard with SQL-driven analysis (window functions: LAG,
-  FIRST_VALUE, AVG OVER) revealing that US tech wages grew 64% vs. Norway's 40% from
-  2010–2024, and that Norway's COVID-19 unemployment peak (4.6%) was 3.5pp below the US (8.1%).
-- Integrated two real government REST APIs (Statistics Norway SSB, U.S. Bureau of Labor
-  Statistics) with different data formats (JSON-stat, BLS v2), mapping ~119K Norwegian ICT
-  workers to ~3M US IT workers using NACE-to-NAICS industry crosswalk.
+- Built ETL pipeline pulling from two government REST APIs (SSB JSON-stat, BLS v2) across
+  different formats and industry classifications (NACE J → NAICS 51 crosswalk); loaded into
+  SQLite and normalized wages using OECD PPP conversion factors.
+- Powered key dashboard charts with live SQLite queries using window functions (LAG,
+  FIRST_VALUE, NTILE, PERCENTILE_CONT) and self-joins; added "View SQL" expanders so
+  analytical logic is transparent and reproducible.
+- Applied difference-in-differences (DiD) treating COVID-19 as a natural experiment —
+  Norway (treatment) vs. US (control) — estimating that Norway's labor market institutions
+  absorbed a -1.4 pp unemployment shock relative to the US, with parallel trends validated visually.
+- Validated findings statistically: two-sample t-test on COVID unemployment gap, Pearson
+  correlation between tech employment share and unemployment rate, and linear trend regression
+  (numpy.polyfit) showing US tech wages growing at $2,700/yr vs. Norway's $1,400/yr.
 ```
 
 ## Tech Stack
 
-Python · PostgreSQL · Streamlit · Plotly · Pandas · SQLAlchemy · SSB API · BLS API
+Python · SQLite · Streamlit · Plotly · Pandas · NumPy · SciPy · SSB API · BLS API
 
 ## Project Structure
 
