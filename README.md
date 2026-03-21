@@ -10,9 +10,9 @@ technology sector. Built with real government data from Statistics Norway
 ## Key Findings
 
 1. **Unemployment resilience:** Norway's unemployment rate peaked at **4.6%** during COVID-19 (2020) vs. **8.1%** in the US — a gap of **3.5 percentage points** — and recovered to 3.2% by 2022, reflecting Norway's active labor market policies and social safety net.
-2. **Tech wage gap (PPP-adjusted):** US tech workers earned **$100,658** annually vs. Norway's **$71,658** (PPP-adjusted) in 2023 — the US pays **40% more** in cash compensation, though Norway compensates through universal healthcare, 5-week paid leave, and lower out-of-pocket costs.
-3. **Tech employment share:** **4.0%** of Norway's workforce is in the ICT sector vs. **1.9%** in the US (2023) — Norway has more than double the relative tech workforce share, with ~119,000 ICT workers out of a much smaller total labor force.
-4. **Widening wage gap:** US tech wages grew **64%** between 2010–2024 (PPP-adjusted: $63,565 → $104,170) vs. Norway's **40%** ($53,383 → $74,631), meaning the compensation gap has been widening steadily over 14 years — not a one-time difference.
+2. **Tech wage gap (PPP-adjusted):** US tech workers earned **$124,010** annually vs. Norway's **$78,145** (PPP-adjusted) in 2023 — the US pays **59% more** in cash compensation, though Norway compensates through universal healthcare, 5-week paid leave, and lower out-of-pocket costs.
+3. **Tech employment share:** **5.4%** of Norway's workforce is in the ICT sector vs. **2.5%** in the US (2023) — Norway has more than double the relative tech workforce share, with ~148,000 ICT workers out of a much smaller total labor force.
+4. **Widening wage gap:** US tech wages grew **65%** between 2010–2024 (PPP-adjusted: $76,835 → $126,526) vs. Norway's **28%** ($62,898 → $80,352), meaning the compensation gap has been widening steadily over 14 years — not a one-time difference.
 
 ## Screenshot
 
@@ -43,10 +43,10 @@ Norway–US Labor Market Dashboard | Python, SQLite, Streamlit, Plotly, SSB API,
   analytical logic is transparent and reproducible.
 - Applied difference-in-differences (DiD) treating COVID-19 as a natural experiment —
   Norway (treatment) vs. US (control) — estimating that Norway's labor market institutions
-  absorbed a -1.4 pp unemployment shock relative to the US, with parallel trends validated visually.
+  absorbed a -1.35 pp unemployment shock relative to the US, with parallel trends validated visually.
 - Validated findings statistically: two-sample t-test on COVID unemployment gap, Pearson
   correlation between tech employment share and unemployment rate, and linear trend regression
-  (numpy.polyfit) showing US tech wages growing at $2,700/yr vs. Norway's $1,400/yr.
+  (numpy.polyfit) showing US tech wages growing at $3,828/yr vs. Norway's $1,121/yr.
 ```
 
 ## Tech Stack

@@ -121,7 +121,7 @@ st.caption("Full dataset (2010–2024) — not affected by year filter.")
 
 c1, c2, c3, c4 = st.columns(4)
 if len(us_w23) and len(no_w23):
-    c1.metric("Tech Wage Gap (2023)", f"${us_w23[0] - no_w23[0]:,.0f}", "US pays ~40% more (PPP-adj.)")
+    c1.metric("Tech Wage Gap (2023)", f"${us_w23[0] - no_w23[0]:,.0f}", "US pays ~59% more (PPP-adj.)")
 if len(no_u20) and len(us_u20):
     c2.metric("COVID Unemployment Gap", f"{us_u20[0] - no_u20[0]:.1f} pp", "US peaked 3.5 pp higher in 2020")
 c3.metric("DiD Causal Estimate", f"{did_estimate:+.2f} pp", "Shock Norway absorbed vs. US")
@@ -562,7 +562,7 @@ if len(no_u20) and len(us_u20):
 if len(us_w23) and len(no_w23):
     findings.append(
         f"**2. Tech wage gap (PPP-adjusted):** US tech workers earned USD {us_w23[0]:,.0f} "
-        f"vs. Norway's USD {no_w23[0]:,.0f} in 2023 — the US pays approximately 40% more in cash compensation."
+        f"vs. Norway's USD {no_w23[0]:,.0f} in 2023 — the US pays approximately 59% more in cash compensation."
     )
 if len(no_emp23) and len(us_emp23):
     findings.append(
