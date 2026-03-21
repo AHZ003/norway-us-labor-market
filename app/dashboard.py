@@ -534,14 +534,16 @@ for col, country in zip([c1, c2], ["Norway", "United States"]):
         )
 
 st.markdown(
-    "**Why does the US show a positive correlation?** This is counterintuitive — "
-    "you'd expect more tech employment to associate with *lower* unemployment. "
-    "The explanation is a common time-series trap: the US tech employment share "
-    "was actually *declining* from 2.09% (2010) to 1.86% (2024), while unemployment "
-    "was also falling from 9.6% to ~4% over the same period. Both variables trended "
-    "downward together, so years with higher tech share (2010–2012) happened to coincide "
-    "with higher post-financial-crisis unemployment. This is a spurious correlation driven "
-    "by the shared recovery trend — not a real relationship between the two variables."
+    "**What the correlations show:** The US shows a strong negative correlation: years with "
+    "higher tech employment share tend to coincide with lower unemployment. This aligns with "
+    "intuition, but a time-series caveat applies — both variables follow a dominant shared trend. "
+    "US tech share climbed steadily from ~2.1% (2010) to a peak of ~2.6% (2022) while "
+    "unemployment fell from 9.6% post-financial-crisis to 3.6% by 2022. When two time-series "
+    "share a common trend, their correlation can appear strong and significant even without a "
+    "direct causal link. Norway's correlation is weaker and not statistically significant, partly "
+    "because Norway's unemployment is far less volatile (range: 1.8%–4.7% vs. US 3.6%–9.6%). "
+    "This is why the DiD analysis above is more informative — it controls for baseline differences "
+    "and isolates the COVID shock as a discrete causal event."
 )
 st.caption("Note: Correlation does not imply causation. This is why the DiD analysis above is more useful — it controls for pre-existing differences and isolates the COVID shock specifically.")
 

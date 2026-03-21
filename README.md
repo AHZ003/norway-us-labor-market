@@ -62,7 +62,8 @@ norway-us-labor-market/
 │   ├── fetch_ssb.py          # Norway data fetcher (SSB API)
 │   ├── fetch_bls.py          # US data fetcher (BLS API)
 │   ├── clean.py              # Data cleaning and normalization
-│   ├── database.py           # PostgreSQL schema loading
+│   ├── database_sqlite.py    # SQLite builder and query helper (used by dashboard)
+│   ├── database.py           # PostgreSQL schema loading (optional)
 │   └── analyze.py            # SQL analysis functions
 ├── sql/
 │   ├── create_tables.sql     # Database schema DDL
